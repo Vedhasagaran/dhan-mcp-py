@@ -22,6 +22,10 @@ def get_holdings_summary() -> dict:
     # maybe reduce fields
     return {"holdings": holdings}
 
-if __name__ == "__main__":
+def main():
+    """Main entry point for the MCP server."""
     print("[INFO] Using environment credentials")
     mcp.run(transport="stdio")
+
+if __name__ == "__main__":
+    main()
