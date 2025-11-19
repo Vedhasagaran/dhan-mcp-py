@@ -103,3 +103,8 @@ jupyter_config.json
 
 # Node modules (if present)
 node_modules/
+
+#AdditionalDocs
+claude.md
+publish_checklist.md
+publishing.md
