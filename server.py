@@ -16,11 +16,21 @@ def get_holdings_summary() -> dict:
     """
     Fetch holdings summary via DhanHQ SDK.
     """
-    
+
     client = dhanhq(client_id, access_token)
     holdings = client.get_holdings()
     # maybe reduce fields
     return {"holdings": holdings}
+
+@mcp.tool()
+def get_all_orders() -> dict:
+    """
+    Fetch all orders from DhanHQ account.
+    Returns a list of all orders with their details including order ID, status, quantity, price, etc.
+    """
+    client = dhanhq(client_id, access_token)
+    orders = client.get_order_list()
+    return {"orders": orders}
 
 def main():
     """Main entry point for the MCP server."""

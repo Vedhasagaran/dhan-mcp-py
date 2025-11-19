@@ -87,6 +87,9 @@ Thumbs.db
 .env
 .env.*
 
+# PyPI credentials
+.pypirc
+
 # logs and databases
 *.log
 *.sqlite3
