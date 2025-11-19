@@ -141,6 +141,18 @@ Fetches your current holdings from DhanHQ.
 }
 ```
 
+#### `get_all_orders`
+Fetches all orders from your DhanHQ account.
+
+**Returns:**
+```json
+{
+  "orders": [
+    // Array of order objects with details like order ID, status, quantity, price, etc.
+  ]
+}
+```
+
 ## Development
 
 ### Setting Up Development Environment
