@@ -153,6 +153,23 @@ Fetches all orders from your DhanHQ account.
 }
 ```
 
+#### `renew_access_token`
+Renews your DhanHQ access token for another 24 hours. This is useful for extending your session without manually copying tokens from the web interface.
+
+**Important:** Only works with tokens generated from Dhan Web (web.dhan.co). Tokens obtained via API key/secret cannot be renewed using this method.
+
+**Returns:**
+```json
+{
+  "status": "success",
+  "message": "Token renewed successfully...",
+  "new_token": "eyJ0eXAiOiJKV1QiLCJhbGc...",
+  "expires_in": "24 hours"
+}
+```
+
+**Usage:** After renewal, update your `DHAN_ACCESS_TOKEN` environment variable with the new token, or update your MCP client configuration.
+
 ## Development
 
 ### Setting Up Development Environment

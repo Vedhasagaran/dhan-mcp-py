@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dhan-mcp-server"
-version = "0.2.0"
+version = "0.3.0"
 description = "Model Context Protocol (MCP) server for DhanHQ trading platform"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -27,6 +27,7 @@ dependencies = [
     "fastmcp>=2.13.0",
     "dhanhq>=2.0.2",
     "mcp>=1.21.0",
+    "requests>=2.28.0",
 ]
 
 [project.urls]
