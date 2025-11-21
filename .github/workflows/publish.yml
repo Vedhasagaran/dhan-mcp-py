@@ -9,7 +9,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     environment:
-      name: pypi
+      name: prod
       url: https://pypi.org/p/dhan-mcp-server
 
     permissions:
