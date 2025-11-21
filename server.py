@@ -34,6 +34,34 @@ def get_all_orders() -> dict:
     return {"orders": orders}
 
 @mcp.tool()
+def get_trade_history(from_date: str, to_date: str) -> dict:
+    """
+    Fetch trade history within a date range.
+
+    Parameters:
+    - from_date: Start date in format 'YYYY-MM-DD' (e.g., '2024-11-01')
+    - to_date: End date in format 'YYYY-MM-DD' (e.g., '2024-11-21')
+
+    Returns all trades executed within the specified date range with details including:
+    trade ID, order ID, quantity, price, time, and settlement status.
+    """
+    client = dhanhq(client_id, access_token)
+    try:
+        trades = client.get_trade_history(from_date, to_date)
+        return {
+            "status": "success",
+            "from_date": from_date,
+            "to_date": to_date,
+            "trades": trades
+        }
+    except Exception as e:
+        return {
+            "status": "error",
+            "message": f"Failed to fetch trade history: {str(e)}",
+            "error_details": str(e)
+        }
+
+@mcp.tool()
 def renew_access_token() -> dict:
     """
     Renew the DhanHQ access token for another 24 hours.

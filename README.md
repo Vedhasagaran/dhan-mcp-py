@@ -153,6 +153,25 @@ Fetches all orders from your DhanHQ account.
 }
 ```
 
+#### `get_trade_history`
+Fetch trade history within a specific date range.
+
+**Parameters:**
+- `from_date`: Start date in format `YYYY-MM-DD` (e.g., `2025-11-01`)
+- `to_date`: End date in format `YYYY-MM-DD` (e.g., `2025-11-21`)
+
+**Returns:**
+```json
+{
+  "status": "success",
+  "from_date": "2025-11-01",
+  "to_date": "2025-11-21",
+  "trades": [
+    // Array of trade objects with details like trade ID, order ID, quantity, price, time, settlement status
+  ]
+}
+```
+
 #### `renew_access_token`
 Renews your DhanHQ access token for another 24 hours. This is useful for extending your session without manually copying tokens from the web interface.
 
